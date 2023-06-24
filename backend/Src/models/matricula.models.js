@@ -3,7 +3,7 @@ const mongoosePaginate = require('mongoose-paginate-v2')
 
 const matriculaSchema = new Schema({
 
-  matriculaid:{
+  matricuid:{
     type: Number,
     required: true,
   },

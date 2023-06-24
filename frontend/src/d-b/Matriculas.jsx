@@ -15,7 +15,7 @@ const Matriculas = () => {
         const [edit, setEdit] = useState(false);
        
         const [dataForm, setDataForm] = useState({
-            matriculaid:"",
+            matricuid:"",
             fecha: "",
             estudiantenombre1: "",
             estudiantenombre2: "",
@@ -49,7 +49,7 @@ const Matriculas = () => {
             // setLastname('');
             // setEmail('');
             // setSalary(0);
-            setDataForm({matriculaid:"",fecha:"", estudiantenombre1: "",estudiantenombre2: "", estudianteapellido1:"", estudianteapellido2:"",documentoestudiante:"",telefono:"",email:"",acudientenombre1:"",
+            setDataForm({matricuid:"",fecha:"", estudiantenombre1: "",estudiantenombre2: "", estudianteapellido1:"", estudianteapellido2:"",documentoestudiante:"",telefono:"",email:"",acudientenombre1:"",
         acudientenombre2:"",acudienteapellido1:"",acudienteapellido2:"",documentoacudiente:"",profesornombre1:"",profesorapellido1:"",grupoperteneciente:"",subnivel:"",});
             setEdit(false);
         };
@@ -134,7 +134,7 @@ const Matriculas = () => {
             // setEmail(item.email);
     
             setDataForm({
-                matriculaidid: item.matriculaid,fecha: item.fecha,estudiantenombre1: item.estudiantenombre1, estudiantenombre2: item.estudiantenombre2, estudianteapellido1: item.estudianteapellido1, estudianteapellido2: item.estudianteapellido2,
+                matricuid:item.matricuid,fecha: item.fecha,estudiantenombre1: item.estudiantenombre1, estudiantenombre2: item.estudiantenombre2, estudianteapellido1: item.estudianteapellido1, estudianteapellido2: item.estudianteapellido2,
                 documentoestudiante: item.documentoestudiante,telefono: item.telefono, email: item.email, acudientenombre1: item.acudientenombre1,acudientenombre2: item.acudientenombre2,acudienteapellido1: item.acudienteapellido1,acudienteapellido2: item.acudienteapellido2,
                 documentoacudiente: item.documentoacudiente,profesornombre1: item.profesornombre1, profesorapellido1: item.profesorapellido1, grupoperteneciente: item.grupoperteneciente, subnivel: item.subnivel,
             });
@@ -155,7 +155,7 @@ const Matriculas = () => {
                     confirmButtonText: 'Yes, delete it!'
                 }).then(async (result) => {
                     if (result.isConfirmed) {
-                        const { data } = await axios.delete('matrucula/delete/' + id)
+                        const { data } = await axios.delete('matricula/delete/' + id)
                         getData();
                         /* Mensaje que confirma la eliminacion del registro*/
                         Swal.fire({
@@ -190,7 +190,7 @@ const Matriculas = () => {
                             <div className="card-body">
                                 <form onSubmit={actions}>
                                 <div className="mb-3">
-                                        <input type="number" placeholder="matriculaid" className="form-control" required value={dataForm.matriculaid} onChange={(e) => setDataForm({ ...dataForm, matriculaid: e.target.value })} />
+                                        <input type="number" placeholder="matricuid" className="form-control" required value={dataForm.matricuid} onChange={(e) => setDataForm({ ...dataForm, matricuid: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
                                         <input type="text" placeholder="fecha" className="form-control" required value={dataForm.fecha} onChange={(e) => setDataForm({ ...dataForm, fecha: e.target.value })} />
@@ -205,7 +205,7 @@ const Matriculas = () => {
                                         <input type="text" placeholder="estudianteapellido1" className="form-control" required value={dataForm.estudianteapellido1} onChange={(e) => setDataForm({ ...dataForm, estudianteapellido1: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="email" placeholder="estudianteapellido2" className="form-control" required value={dataForm.estudianteapellido2} onChange={(e) => setDataForm({ ...dataForm, estudianteapellido2: e.target.value })} />
+                                        <input type="text" placeholder="estudianteapellido2" className="form-control" required value={dataForm.estudianteapellido2} onChange={(e) => setDataForm({ ...dataForm, estudianteapellido2: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
                                         <input type="number" placeholder="documentoestudiante" className="form-control" required value={dataForm.documentoestudiante} onChange={(e) => setDataForm({ ...dataForm, documentoestudiante: e.target.value })} />
@@ -217,31 +217,31 @@ const Matriculas = () => {
                                         <input type="text" placeholder="email" className="form-control" required value={dataForm.email} onChange={(e) => setDataForm({ ...dataForm, email: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="acudientenombre1" className="form-control" required value={dataForm.acudientenombre1} onChange={(e) => setDataForm({ ...dataForm, acudientenombre1: e.target.value })} />
+                                        <input type="text" placeholder="acudientenombre1" className="form-control" required value={dataForm.acudientenombre1} onChange={(e) => setDataForm({ ...dataForm, acudientenombre1: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="acudientenombre2" className="form-control" required value={dataForm.acudientenombre2} onChange={(e) => setDataForm({ ...dataForm, acudientenombre2: e.target.value })} />
+                                        <input type="text" placeholder="acudientenombre2" className="form-control" required value={dataForm.acudientenombre2} onChange={(e) => setDataForm({ ...dataForm, acudientenombre2: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="acudienteapellido1" className="form-control" required value={dataForm.acudienteapellido1} onChange={(e) => setDataForm({ ...dataForm, acudienteapellido1: e.target.value })} />
+                                        <input type="text" placeholder="acudienteapellido1" className="form-control" required value={dataForm.acudienteapellido1} onChange={(e) => setDataForm({ ...dataForm, acudienteapellido1: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="acudienteapellido2" className="form-control" required value={dataForm.acudienteapellido2} onChange={(e) => setDataForm({ ...dataForm, acudienteapellido2: e.target.value })} />
+                                        <input type="text" placeholder="acudienteapellido2" className="form-control" required value={dataForm.acudienteapellido2} onChange={(e) => setDataForm({ ...dataForm, acudienteapellido2: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="documentoacudiente" className="form-control" required value={dataForm.documentoacudiente} onChange={(e) => setDataForm({ ...dataForm, documentoacudiente: e.target.value })} />
+                                        <input type="text" placeholder="documentoacudiente" className="form-control" required value={dataForm.documentoacudiente} onChange={(e) => setDataForm({ ...dataForm, documentoacudiente: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="profesornombre1" className="form-control" required value={dataForm.profesornombre1} onChange={(e) => setDataForm({ ...dataForm, profesornombre1: e.target.value })} />
+                                        <input type="text" placeholder="profesornombre1" className="form-control" required value={dataForm.profesornombre1} onChange={(e) => setDataForm({ ...dataForm, profesornombre1: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="profesorapellido1" className="form-control" required value={dataForm.profesorapellido1} onChange={(e) => setDataForm({ ...dataForm, profesorapellido1: e.target.value })} />
+                                        <input type="text" placeholder="profesorapellido1" className="form-control" required value={dataForm.profesorapellido1} onChange={(e) => setDataForm({ ...dataForm, profesorapellido1: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="grupoperteneciente" className="form-control" required value={dataForm.grupoperteneciente} onChange={(e) => setDataForm({ ...dataForm, grupoperteneciente: e.target.value })} />
+                                        <input type="text" placeholder="grupoperteneciente" className="form-control" required value={dataForm.grupoperteneciente} onChange={(e) => setDataForm({ ...dataForm, grupoperteneciente: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="number" placeholder="subnivel" className="form-control" required value={dataForm.subnivel} onChange={(e) => setDataForm({ ...dataForm, subnivel: e.target.value })} />
+                                        <input type="text" placeholder="subnivel" className="form-control" required value={dataForm.subnivel} onChange={(e) => setDataForm({ ...dataForm, subnivel: e.target.value })} />
                                     </div>
                                     <button className="btn btn-primary form-control" type="submit">Enviar</button>
                                 </form>
@@ -284,7 +284,7 @@ const Matriculas = () => {
                             matricula.map((item, i) => (
                                 <tr key={item._id}>
                                     <td>{i + 1}</td>
-                                    <td><Link to={'/matriculaid/'+ item._id}>{item.matriculaid}</Link></td>
+                                    <td><Link to={'/matriculaid/'+ item._id}>{item.matricuid}</Link></td>
                                     <td>{item.fecha} </td>
                                     <td>{item.estudiantenombre1}</td>
                                     <td>{item.estudiantenombre2}</td>

@@ -31,9 +31,9 @@ const Matric = () => {
               <div className="d-flex justify-conten-center">
                   <div className="col-12 col-md-8">
                       <div className="card">
-                          <h3 className="card-title">{matriculas.matriculaid}</h3>
+                          <h3 className="card-title">{matriculas.matricuid}</h3>
                           <div className="card-body">
-                              <p> ${matriculas.matriculaid}</p>
+                              <p> ${matriculas.matricuid}</p>
                           </div>
                       </div>
                   </div>

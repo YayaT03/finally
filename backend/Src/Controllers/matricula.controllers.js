@@ -38,7 +38,7 @@ const matriculaModel = require('../models/matricula.models')
 
   matriculaCtrl.add = async (req, res) => {
     try {
-        const { matriculaid,fecha,estudiantenombre1,estudiantenombre2,estudianteapellido1, estudianteapellido2,documentoestudiante,telefono,email,
+        const { matricuid,fecha,estudiantenombre1,estudiantenombre2,estudianteapellido1, estudianteapellido2,documentoestudiante,telefono,email,
         acudientenombre1,acudientenombre2,acudienteapellido1,acudienteapellido2,documentoacudiente, profesornombre1,profesorapellido1, grupo, subnivel } = req.body
         if (!matriculaid || matriculaid.trim() === "") {
             return res.status(400).json({
@@ -56,7 +56,7 @@ const matriculaModel = require('../models/matricula.models')
         }
 
         const newMatricula = new matriculaModel({
-            matriculaid,
+            matricuid,
             fecha,
             estudiantenombre1,
             estudiantenombre2,
@@ -103,7 +103,7 @@ const matriculaModel = require('../models/matricula.models')
 
     }
 
-    const matriculaid = req.body.matriculaid || matricula.matriculaid;
+    const matricuid = req.body.matricuid || matricula.matricuid;
     const fecha = req.body.fecha || matricula.fecha;
     const estudiantenombre1 = req.body.estudiantenombre1 || matricula.estudiantenombre1;
     const estudiantenombre2 = req.body.estudiantenombre2 || matricula.estudiantenombre2;
@@ -124,7 +124,7 @@ const matriculaModel = require('../models/matricula.models')
     
 
     const matriculaUpdate = {
-        matriculaid,
+        matricuid,
         fecha,
         estudiantenombre1,
         estudiantenombre2,
