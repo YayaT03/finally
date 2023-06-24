@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+.figure{
+  text-align: justify;
+}
+.p2{
+  text-align: justify;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+ 
+}
+
+.App-header {
+  background-color: #c264df;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(216, 156, 240);
+}
+
+.App-link {
+  color: #1b141f;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.frase{
+color: #400452;
+text-align: center;
+font-style: oblique;
+}
+
+
+
+footer{
+  padding:35px;
+  margin-top:35px;
+  color:#ffffff;
+  background-color:#3a006f;
+  text-align: center;
+  
+  
+}
+
+.navbarText{
+  color: #1b141f;
+}
+.list-group-item{
+  background-color: rgb(191, 166, 239);
+}
+.accordion-button{
+  background-color: rgb(232, 158, 254);
+}
+.accordion-collapse{
+  background-color: rgb(177, 166, 172);
+}
+.container-md-2{
+  background-color: rgb(179, 172, 176);
+  
+}
