@@ -76,7 +76,7 @@ const Grupos = () => {
           </div>
             </Link></li>
           <li className="list-group-item">
-          <Link to="registro"><img src={Bailar} className="float img-fluid" alt="Bailar"></img><div className="carousel-caption d-none d-md-block">
+          <Link to="Registrocompetencia"><img src={Bailar} className="float img-fluid" alt="Bailar"></img><div className="carousel-caption d-none d-md-block">
             <h5>Registro de competencia</h5>
           </div>
            </Link></li>

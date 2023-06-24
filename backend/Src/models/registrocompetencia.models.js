@@ -1,5 +1,5 @@
 const { Schema, model } = require( `mongoose` );
-
+const mongoosePaginate = require('mongoose-paginate-v2')
 
 const registrocompetenciaSchema = new Schema({
     documentid:{
@@ -44,5 +44,6 @@ const registrocompetenciaSchema = new Schema({
     );
 
     
+    registrocompetenciaSchema.plugin(mongoosePaginate);
 
 module.exports = model('registrocompetencia', registrocompetenciaSchema);

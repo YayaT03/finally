@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import Pagination from 'rc-pagination';
 
 
-const Competencia = () => {
+const Registrocompetencia = () => {
    
         const [competencia, setCompetencia] = useState([]);
         
@@ -40,7 +40,7 @@ const Competencia = () => {
         };
     
         const getData = async (pageCurrent) => {
-            const { data } = await axios.get(`/competencias/list?page=${pageCurrent}`);
+            const { data } = await axios.get(`/registrocompetencia/list?page=${pageCurrent}`);
             setCompetencia(data.competencia.docs)
             setPage(data.competencia.page)
             setTotalPages(data.competencia.totalPages)
@@ -55,7 +55,7 @@ const Competencia = () => {
         const saveCompetencia = async () => {
             try {
              
-                await axios.post('/competencias/add', dataForm)
+                await axios.post('/registrocompetencia/add', dataForm)
                 cleanData();
                 getData()
     
@@ -72,7 +72,7 @@ const Competencia = () => {
                 const id = localStorage.getItem("id");
               
     
-                const { data } = await axios.put("competencias/update/" + id, dataForm);
+                const { data } = await axios.put("registrocompetencia/update/" + id, dataForm);
                 cleanData();
                 getData();
     
@@ -127,7 +127,7 @@ const Competencia = () => {
                     confirmButtonText: 'Yes, delete it!'
                 }).then(async (result) => {
                     if (result.isConfirmed) {
-                        const { data } = await axios.delete('/delete/' + id)
+                        const { data } = await axios.delete('registrocompetencia/delete/' + id)
                         getData();
                         /* Mensaje que confirma la eliminacion del registro*/
                         Swal.fire({
@@ -214,7 +214,7 @@ const Competencia = () => {
                             competencia.map((item, i) => (
                                 <tr key={item._id}>
                                     <td>{i + 1}</td>
-                                    <td><Link to={'/subnivelid/'+ item._id}>{item.name1}</Link></td>
+                                    <td><Link to={'/competenciasid/'+ item._id}>{item.name1}</Link></td>
                                     <td>{item.name2} </td>
                                     <td>{item.lastname1} </td>
                                     <td>{item.lastname2} </td>
@@ -246,4 +246,4 @@ const Competencia = () => {
     };
     
 
-export default Competencia
+export default Registrocompetencia

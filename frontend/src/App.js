@@ -4,11 +4,11 @@ import './App.css';
 import NavBar from "./components/NavBar"
 import Inicio from "./view/Inicio"
 import Blog from "./view/Blog"
-import Grups from "./view/Grupos"
+import Grups from "./view/Grups"
 
 
 
-import { Registro } from './view/Registro';
+import { Registro } from './view/crud/Registro';
 import Covers from "./view/Covers";
 import Contemporaneo from "./view/Contemporaneo";
 import Urbano from "./view/Urbano";
@@ -28,7 +28,8 @@ import Grupos from './d-b/Grupos';
 import Grup from './d-b/Grup';
 import Subniveles from './d-b/Subniveles';
 import Subniv from './d-b/Subniv';
-import Competencia from './d-b/Registrocompetencia';
+import Registrocompetencia from './d-b/Registrocompetencia';
+import Registroc from './d-b/Registroc';
 
 function App() {
   return (
@@ -48,12 +49,12 @@ function App() {
         <Route path="/start/grupos" element={<Grupos/>} />
         <Route path="/start/matriculas" element={<Matriculas />} />
         <Route path="/start/subniveles" element={<Subniveles/>} />
-        <Route path="/start/Registrocompetencia" element={<Competencia/>} />
+        
 
-        <Route path="/grupos/contemporaneo" element={<Contemporaneo />} />
-        <Route path="/grupos/covers" element={<Covers />} />
-        <Route path="/grupos/urbano" element={<Urbano />} />
-        <Route path="/grupos/registro" element={<Registro />} />
+        <Route path="/grups/contemporaneo" element={<Contemporaneo />} />
+        <Route path="/grups/covers" element={<Covers />} />
+        <Route path="/grups/urbano" element={<Urbano />} />
+        <Route path="/grups/Registrocompetencia" element={<Registrocompetencia />} />
 
         <Route path="/" exact component ={Estudiantes}/>
         <Route path='estudianteid/:id' component={Estudiant}/>
@@ -71,13 +72,15 @@ function App() {
         <Route path='subniveles/:id' exact component={Subniveles} />
         <Route path='subnivelid/:id' component={Subniv} />
         
-        <Route path='competencias/:id' component={Competencia} />
+        <Route path='/' component={Registrocompetencia} />
+        <Route path='competencias/:id' component={Registroc} />
+
 
         <Route path="/" exact component ={Profesores}/>
        <Route path='profesorid/:id' component={Profesor}/>
 
        <Route path="/" exact component ={Matriculas}/>
-        <Route path='matriculaid/:id' component={Matric}/>
+        <Route path='matricuid/:id' component={Matric}/>
       </Routes>
         
       
