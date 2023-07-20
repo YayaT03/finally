@@ -33,7 +33,7 @@ const mensualidadesSchema = new Schema({
     },
     
     fecha:{
-        type: String,
+        type: Date,
         
     },
     descripcion:{

@@ -176,7 +176,8 @@ const Mensualidades = () => {
                                         <input type="text" placeholder="lastname2" className="form-control" required value={dataForm.lastname2} onChange={(e) => setDataForm({ ...dataForm, lastname2: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
-                                        <input type="data" placeholder="fecha" className="form-control" required value={dataForm.fecha} onChange={(e) => setDataForm({ ...dataForm, fecha: e.target.value })} />
+                                        <label className="from-label">Fecha</label>
+                                        <input type="date" placeholder="fecha" className="form-control" required value={dataForm.fecha} onChange={(e) => setDataForm({ ...dataForm, fecha: e.target.value })} />
                                     </div>
                                     <div className="mb-3">
                                         <input type="text" placeholder="grupo" className="form-control" required value={dataForm.grupo} onChange={(e) => setDataForm({ ...dataForm, grupo: e.target.value })} />

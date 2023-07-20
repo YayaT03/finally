@@ -1,5 +1,5 @@
 const mensualidadesCtrl = {}
-const mensualidadesModel = require('../models/mensualidades.models')
+const mensualidadesModel = require('../models/mensualidades.model')
 
 mensualidadesCtrl.list = async (req, res) => {
     try {
